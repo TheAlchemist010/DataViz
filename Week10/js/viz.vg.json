@@ -3,31 +3,30 @@
   "data": {
     "url": "https://raw.githubusercontent.com/TheAlchemist010/DataViz/refs/heads/main/Week10/data/ByFuelOverTime.csv"
   },
-
+  "title": "Energy Generation in Australia by Fuel Type",
   "vconcat": [
     {
       "height": 500,
       "width": 1000,
-      
-      "layer": [ 
+      "layer": [
         {
           "selection": {
-          "FuelType": {
-            "type": "multi",
-            "fields": ["Fuel"],
-            "bind": "legend"
+            "FuelType": {
+              "type": "multi",
+              "fields": ["Fuel"],
+              "bind": "legend"
+            },
+            "grid": {
+              "type": "interval",
+              "bind": "scales"
+            },
+            "hover": {
+              "type": "single",
+              "on": "mouseover",
+              "empty": "none"
+            }
           },
-          "grid": {
-            "type": "interval",
-            "bind": "scales"
-          },
-          "hover": {
-            "type": "single",
-            "on": "mouseover",
-            "empty": "none"
-          }
-          },
-            "mark": {
+          "mark": {
             "type": "line",
             "point": true
           },
@@ -71,26 +70,153 @@
               "value": 1.5
             },
             "tooltip": [
-              {"field": "Fuel", "type": "nominal", "title": "Fuel Type"},
-              {"field": "Year", "type": "ordinal", "title": "Year"},
-              {"field": "Generation", "type": "quantitative", "title": "Generation (GWh)"}
+              { "field": "Fuel", "type": "nominal", "title": "Fuel Type" },
+              { "field": "Year", "type": "ordinal", "title": "Year" },
+              { "field": "Generation", "type": "quantitative", "title": "Generation (GWh)" }
             ]
           }
         },
         {
-          "mark": "text",
+          "mark": {
+            "type": "text",
+            "fontSize": 11,
+            "color": "Black"
+          },
+          "transform": [
+            {
+              "filter": {
+                "field": "Year",
+                "equal": "2000-01" 
+              }
+            }
+          ],
           "encoding": {
             "x": {
-              "value": 2015 
+              "field": "Year"
             },
             "y": {
-              "value": 50 
+              "aggregate": "max", 
+              "field": "Generation"
             },
             "text": {
-              "value": "Highlight: Solar Generation in 2015" 
+              "value": [
+                "At the turn of the century,",
+                "black coal peaked"
+              ]
             },
-            "color": {
-              "value": "black" 
+            "opacity": {
+              "condition": {
+                "selection": "FuelType",
+                "value": 1
+              },
+              "value": 0.2
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "rule",
+            "color": "gray",
+            "strokeWidth": 2
+          },
+          "transform": [
+            {
+              "filter": {
+                "field": "Year",
+                "equal": "2000-01" 
+              }
+            }
+          ],
+          "encoding": {
+            "x": {
+              "field": "Year"
+            },
+            "y": {
+              "aggregate": "min", 
+              "field": "Generation"
+            },
+            "y2": {
+              "aggregate": "max",
+              "field": "Generation"
+            },
+            "opacity": {
+              "condition": {
+                "selection": "FuelType",
+                "value": 1
+              },
+              "value": 0.2 
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "fontSize": 11,
+            "color": "Black"
+          },
+          "transform": [
+            {
+              "filter": {
+                "field": "Year",
+                "equal": "2014-15" 
+              }
+            }
+          ],
+          "encoding": {
+            "x": {
+              "field": "Year"
+            },
+            "y": {
+              "aggregate": "mean", 
+              "field": "Generation"
+            },
+            "text": {
+              "value": [
+                "In 2015, the first large-scale",
+                "solar plant went online"
+              ]
+            },
+            "opacity": {
+              "condition": {
+                "selection": "FuelType",
+                "value": 1
+              },
+              "value": 0.2
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "rule",
+            "color": "gray",
+            "strokeWidth": 2
+          },
+          "transform": [
+            {
+              "filter": {
+                "field": "Year",
+                "equal": "2014-15" 
+              }
+            }
+          ],
+          "encoding": {
+            "x": {
+              "field": "Year"
+            },
+            "y": {
+              "aggregate": "min", 
+              "field": "Generation"
+            },
+            "y2": {
+              "aggregate": "max",
+              "field": "Generation"
+            },
+            "opacity": {
+              "condition": {
+                "selection": "FuelType",
+                "value": 1
+              },
+              "value": 0.2 
             }
           }
         }
