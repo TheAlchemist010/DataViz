@@ -46,7 +46,7 @@
           {"field": "GENERATIONMW", "type": "quantitative", "title": "Generation (MWH)"},
           {"field": "LATITUDE", "type": "quantitative", "title": "Latitude"},
           {"field": "LONGITUDE", "type": "quantitative", "title": "Longitude"},
-          {"field": "SUBURB", "type": "nominal", "title": "Suburb"},
+          {"field": "SUBURB", "type": "nominal", "title": "Suburb"}
         ]
       }
     }
