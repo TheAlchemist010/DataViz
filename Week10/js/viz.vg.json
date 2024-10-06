@@ -1,0 +1,100 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/TheAlchemist010/DataViz/refs/heads/main/Week10/data/ByFuelOverTime.csv"
+  },
+
+  "vconcat": [
+    {
+      "height": 500,
+      "width": 1000,
+      
+      "layer": [ 
+        {
+          "selection": {
+          "FuelType": {
+            "type": "multi",
+            "fields": ["Fuel"],
+            "bind": "legend"
+          },
+          "grid": {
+            "type": "interval",
+            "bind": "scales"
+          },
+          "hover": {
+            "type": "single",
+            "on": "mouseover",
+            "empty": "none"
+          }
+          },
+            "mark": {
+            "type": "line",
+            "point": true
+          },
+          "encoding": {
+            "x": {
+              "field": "Year",
+              "type": "ordinal",
+              "axis": {
+                "title": "Year"
+              }
+            },
+            "y": {
+              "field": "Generation",
+              "type": "quantitative",
+              "axis": {
+                "title": "Generation (in GWh)"
+              },
+              "scale": {
+                "domainMin": 0
+              }
+            },
+            "color": {
+              "field": "Fuel",
+              "type": "nominal",
+              "legend": {
+                "title": "Fuel Type"
+              }
+            },
+            "opacity": {
+              "condition": {
+                "selection": "FuelType",
+                "value": 1
+              },
+              "value": 0.2
+            },
+            "size": {
+              "condition": {
+                "selection": "hover",
+                "value": 3
+              },
+              "value": 1.5
+            },
+            "tooltip": [
+              {"field": "Fuel", "type": "nominal", "title": "Fuel Type"},
+              {"field": "Year", "type": "ordinal", "title": "Year"},
+              {"field": "Generation", "type": "quantitative", "title": "Generation (GWh)"}
+            ]
+          }
+        },
+        {
+          "mark": "text",
+          "encoding": {
+            "x": {
+              "value": 2015 
+            },
+            "y": {
+              "value": 50 
+            },
+            "text": {
+              "value": "Highlight: Solar Generation in 2015" 
+            },
+            "color": {
+              "value": "black" 
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
