@@ -11,10 +11,16 @@
 		
 		<div id="fuel"></div>
 
+
+		<div id="emmisions1"></div>
+		<div id="emmisions2"></div>
+
 		<script type="text/javascript">
-  			var spec2 = "js/viz.vg.json";
   			vegaEmbed('#map', "js/map.vg.json").then(function(result) {}).catch(console.error);
 			vegaEmbed('#fuel', "js/fuel.vg.json").then(function(result) {}).catch(console.error);
+			
+			vegaEmbed('#emmisions1', "js/emmisions1.vg.json").then(function(result) {}).catch(console.error);
+			vegaEmbed('#emmisions1', "js/emmisions2.vg.json").then(function(result) {}).catch(console.error);
 		</script>
 	</body>
 </html>
