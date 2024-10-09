@@ -1,0 +1,59 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/TheAlchemist010/DataViz/refs/heads/main/A2/data/owid-co2-data.csv"
+  },
+  "title": "Carbon Emissions",
+  "height": 500,
+  "width": 1000,
+  "transform": [
+    {
+      "filter": {
+        "field": "country", 
+        "oneOf": ["Australia", "France", "United Kingdom", "Italy"]
+      }
+    },
+    {
+      "filter": "datum.year >= 180"  
+    }
+  ],
+  "layer": [
+    {
+      "mark": {"type": "line", "point": true},
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "quantitative", 
+          "axis": {
+            "title": "Year",
+            "tickCount": 10,
+            "format": ".0f"
+          }
+        },
+        "y": {
+          "field": "co2",
+          "type": "quantitative",
+          "axis": {"title": "CO2 emissions"},
+          "scale": {"domainMin": 0}
+        },
+        "color": {
+          "field": "country",
+          "type": "nominal",
+          "legend": {"title": "Country"},
+          "scale": {
+            "domain": ["Australia", "France", "United Kingdom", "Italy"],
+            "range": ["#007ad1", "#b78457", "#577557", "#a65959"]
+          }
+        },
+        "opacity": {
+          "condition": {
+            "test": "datum.country === 'Australia'",
+            "value": 1
+          },
+          "value": 0.4
+        }
+      }
+    }
+  ]
+}
+
