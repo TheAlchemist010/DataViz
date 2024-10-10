@@ -1,6 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": "Upcoming Projects",
+  "width": "container",
+  "height": 300,
   "data": {
     "url": "https://raw.githubusercontent.com/TheAlchemist010/DataViz/refs/heads/main/A2/data/UpcomingPlants.csv"
   },
@@ -13,12 +15,15 @@
             {"field": "Status", "equal": "Abandoned"},
             {"field": "Status", "equal": "Possibly abandoned"},
             {"field": "Status", "equal": "Cancelled"},
-            {"field": "Status", "equal": "Approved"},
             {"field": "Type", "equal": "Landfill Gas"},
             {"field": "Type", "equal": "Fossil Fuel/Solar"}
           ]
         }
       }
+    },
+    {
+      "calculate": "datum.Capacity",  // Ensure the field is properly referenced
+      "as": "Combined Capacity"
     }
   ],
   "mark": "bar",
@@ -29,7 +34,7 @@
       "axis": {"title": "Fuel Type"}
     },
     "y": {
-      "field": "Combined Capacity",
+      "field": "Capacity",
       "type": "quantitative",
       "aggregate": "sum",
       "axis": {"title": "Total Energy Generation"}
@@ -51,14 +56,14 @@
           "#2196f3", 
           "#ffeb3b", 
           "#ff5722"
-                  ]
+        ]
       },
       "legend": {"title": "Project Status"}
     },
     "tooltip": [
       {"field": "Type", "title": "Fuel Type"},
       {"field": "Status", "title": "Project Status"},
-      {"field": "Capacity", "title": "Energy Generation"}
+      {"field": "Combined Capacity", "title": "Energy Generation"} 
     ]
   },
   "config": {
