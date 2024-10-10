@@ -15,7 +15,7 @@
       }
     },
     {
-      "filter": "datum.year >= 180"
+      "filter": "datum.year >= 1800"
     }
   ],
   "layer": [
