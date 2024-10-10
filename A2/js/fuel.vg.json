@@ -56,7 +56,15 @@
           "mark": {"type": "text", "fontSize": 11, "color": "Black"},
           "transform": [{"filter": {"field": "Year", "equal": "1998-99"}}],
           "encoding": {
-            "x": {"field": "Year"},
+            "x": {
+              "field": "Year",
+              "type": "ordinal",
+              "axis": {
+                "title": "Year",
+                "labelAngle": -45,
+                "tickCount": 10  
+              }
+            },
             "y": {"aggregate": "max", "field": "Generation"},
             "text": {
               "value": ["At the turn of the century,", "black coal peaked"]
