@@ -1,6 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": "Power Stations in Australia",
+  "width": "container",
+  "height": 300,
   "projection": {"type": "equirectangular"},
   "layer": [
     {
