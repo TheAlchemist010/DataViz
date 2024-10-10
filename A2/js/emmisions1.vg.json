@@ -4,8 +4,8 @@
     "url": "https://raw.githubusercontent.com/TheAlchemist010/DataViz/refs/heads/main/A2/data/owid-co2-data.csv"
   },
   "title": "Carbon Emissions",
-  "height": 500,
-  "width": 1000,
+  "width": "container",
+  "height": 300,
   "transform": [
     {
       "filter": {
