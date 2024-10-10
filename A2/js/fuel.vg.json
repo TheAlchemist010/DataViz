@@ -4,10 +4,10 @@
     "url": "https://raw.githubusercontent.com/TheAlchemist010/DataViz/refs/heads/main/Week10/data/ByFuelOverTime.csv"
   },
   "title": "Energy Generation in Australia by Fuel Type",
+  "width": "container",
+  "height": 300,
   "vconcat": [
     {
-      "width": "container",
-      "height": 300,
       "layer": [
         {
           "selection": {
