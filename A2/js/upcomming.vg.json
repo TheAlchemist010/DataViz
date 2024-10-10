@@ -1,6 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Energy Generation by Fuel Type and Project Status",
+  "title": "Upcoming Projects",
+  "width": "container",
+  "height": 300,
   "data": {
     "url": "https://raw.githubusercontent.com/TheAlchemist010/DataViz/refs/heads/main/A2/data/UpcomingPlants.csv"
   },
@@ -29,7 +31,7 @@
       "axis": {"title": "Fuel Type"}
     },
     "y": {
-      "field": "Capacity",
+      "field": "Combined Capacity",
       "type": "quantitative",
       "aggregate": "sum",
       "axis": {"title": "Total Energy Generation"}
