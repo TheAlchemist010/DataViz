@@ -3,6 +3,7 @@
   "title": "Upcoming Projects",
   "width": "500",
   "height": 300,
+  "background": "lightgray",
   "data": {
     "url": "https://raw.githubusercontent.com/TheAlchemist010/DataViz/refs/heads/main/A2/data/UpcomingPlants.csv"
   },
@@ -37,7 +38,7 @@
       "field": "Capacity",
       "type": "quantitative",
       "aggregate": "sum",
-      "axis": {"title": "Total Energy Generation"}
+      "axis": {"title": "Total Energy Generation (MWH)"}
     },
     "color": {
       "field": "Status",
