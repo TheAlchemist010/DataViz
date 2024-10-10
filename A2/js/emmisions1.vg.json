@@ -5,6 +5,7 @@
   },
   "title": "Carbon Emissions",
   "width": "container",
+  "background": "lightgray",
   "height": 300,
   "transform": [
     {
