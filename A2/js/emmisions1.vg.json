@@ -9,13 +9,11 @@
   "transform": [
     {
       "filter": {
-        "field": "country", 
+        "field": "country",
         "oneOf": ["Australia", "France", "United Kingdom", "Italy"]
       }
     },
-    {
-      "filter": "datum.year >= 180"  
-    }
+    {"filter": "datum.year >= 180"}
   ],
   "layer": [
     {
@@ -23,12 +21,8 @@
       "encoding": {
         "x": {
           "field": "year",
-          "type": "quantitative", 
-          "axis": {
-            "title": "Year",
-            "tickCount": 10,
-            "format": ".0f"
-          }
+          "type": "quantitative",
+          "axis": {"title": "Year", "tickCount": 10, "format": ".0f"}
         },
         "y": {
           "field": "co2",
@@ -46,14 +40,15 @@
           }
         },
         "opacity": {
-          "condition": {
-            "test": "datum.country === 'Australia'",
-            "value": 1
-          },
+          "condition": {"test": "datum.country === 'Australia'", "value": 1},
           "value": 0.4
-        }
+        },
+        "tooltip": [
+          {"field": "year", "type": "quantitative", "title": "Year"},
+          {"field": "co2", "type": "quantitative", "title": "CO2 emissions"},
+          {"field": "country", "type": "nominal", "title": "Country"}
+        ]
       }
     }
   ]
 }
-
