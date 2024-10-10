@@ -14,7 +14,7 @@
       }
     },
     {
-      "filter": "datum.year >= 180"  
+      "filter": "datum.year >= 180"
     }
   ],
   "layer": [
@@ -23,7 +23,7 @@
       "encoding": {
         "x": {
           "field": "year",
-          "type": "quantitative", 
+          "type": "quantitative",
           "axis": {
             "title": "Year",
             "tickCount": 10,
@@ -51,9 +51,13 @@
             "value": 1
           },
           "value": 0.4
-        }
+        },
+        "tooltip": [
+          {"field": "year", "type": "quantitative", "title": "Year"},
+          {"field": "co2_per_capita", "type": "quantitative", "title": "CO2 emissions per capita"},
+          {"field": "country", "type": "nominal", "title": "Country"}
+        ]
       }
     }
   ]
 }
-
