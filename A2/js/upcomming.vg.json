@@ -1,0 +1,69 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Energy Generation by Fuel Type and Project Status",
+  "data": {
+    "url": "https://raw.githubusercontent.com/TheAlchemist010/DataViz/refs/heads/main/A2/data/UpcomingPlants.csv"
+  },
+  "transform": [
+    {
+      "filter": {
+        "not": {
+          "or": [
+            {"field": "Status", "equal": "Rejected"},
+            {"field": "Status", "equal": "Abandoned"},
+            {"field": "Status", "equal": "Possibly abandoned"},
+            {"field": "Status", "equal": "Cancelled"},
+            {"field": "Status", "equal": "Approved"},
+            {"field": "Type", "equal": "Landfill Gas"},
+            {"field": "Type", "equal": "Fossil Fuel/Solar"}
+          ]
+        }
+      }
+    }
+  ],
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "field": "Type",
+      "type": "ordinal",
+      "axis": {"title": "Fuel Type"}
+    },
+    "y": {
+      "field": "Capacity",
+      "type": "quantitative",
+      "aggregate": "sum",
+      "axis": {"title": "Total Energy Generation"}
+    },
+    "color": {
+      "field": "Status",
+      "type": "nominal",
+      "scale": {
+        "domain": [
+          "Approved",
+          "On hold",
+          "Pre-construction",
+          "Proposed",
+          "Under construction"
+        ],
+        "range": [
+          "#4caf50", 
+          "#ff9800", 
+          "#2196f3", 
+          "#ffeb3b", 
+          "#ff5722"
+                  ]
+      },
+      "legend": {"title": "Project Status"}
+    },
+    "tooltip": [
+      {"field": "Type", "title": "Fuel Type"},
+      {"field": "Status", "title": "Project Status"},
+      {"field": "Capacity", "title": "Energy Generation"}
+    ]
+  },
+  "config": {
+    "bar": {
+      "opacity": 0.8
+    }
+  }
+}
