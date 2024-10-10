@@ -1,0 +1,59 @@
+Project name,Status,Capacity,Type
+Kingston,Cancelled,300,Fossil Fuel
+Arckaringa,Cancelled,560,Fossil Fuel
+Redbank 2,Cancelled,151,Fossil Fuel
+Reeves Plains,Approved,300,Fossil Fuel
+ZeroGen,Cancelled,300,Fossil Fuel
+Spring Gully,Possibly abandoned,1000,Fossil Fuel
+Bluewaters 3 & 4,On hold,416,Fossil Fuel
+Coolimba,Rejected,450,Fossil Fuel
+Shaw River,Abandoned,1500,Fossil Fuel
+Tarrone,On hold,920,Fossil Fuel
+Quarantine Power Station Expansion,Proposed,160,Fossil Fuel
+Burdekin Hydro,Proposed,37,Hydro
+Kidston Pumped Hydro,Pre-construction,250,Hydro
+Goat Hill Pumped Hydro,Proposed,230,Hydro
+Cultana Pumped Hydro Project,Proposed,225,Hydro
+Highbury Pumped Hydro,Cancelled,300,Hydro
+Baroota pumped hydro,Proposed,200,Hydro
+Middleback Pumped Hydro,Proposed,1000,Hydro
+Kanmantoo mine,Cancelled,250,Hydro
+Bell Bay Pulp Mill,Cancelled,180,Biomass
+Yorke Biomass Energy Project,Proposed,15,Biomass
+Edinburgh Parks Bioreactor Plant Stage 1,Proposed,8,Biomass
+Edinburgh Parks Bioreactor Plant Stage 2,Proposed,7,Biomass
+Ingham Integrated Energy Facility,Proposed,115,Biomass
+Woodlawn Bioreactor (units 7 to 12),Proposed,6,Landfill Gas
+Woodlawn Bioreactor (units 4 to 6),Proposed,3,Landfill Gas
+Club Merrylands,Proposed,0.8,Landfill Gas
+Kennedy Wind Farm,Proposed,750,Wind
+Crows Nest,Proposed,200,Wind
+Archer Point,Proposed,120,Wind
+Clarke Creek Wind and Solar Farm,Proposed,300,Fossil Fuel/Solar
+TasWind,Abandoned,600,Wind
+Western Plains Wind Farm,Proposed,40,Wind
+Forest Wind,Proposed,1200,Wind
+Forsayth Wind Farm,Proposed,75,Wind
+High Road Wind Farm,Proposed,80,Wind
+Kaban Green Power Hub,Proposed,130,Wind
+Lakeland Wind Farm,Proposed,100,Wind
+Archer Point Wind Farm,Proposed,240,Wind
+Robbins Island Wind Farm,Proposed,340,Wind
+Asian Renewable Energy Hub,Proposed,3500,Wind/Solar
+Bulli Creek Solar Farm,Proposed,2000,Solar
+Munna Creek Solar Farm,Proposed,120,Solar
+Moranbah Solar Farm,Proposed,170,Solar
+Oakey Solar Farm (Stage 2),Proposed,55,Solar
+Childers Solar Farm,Proposed,80,Solar
+Rollingstone Solar Farm,Proposed,110,Solar
+Aramara Solar Farm,Proposed,140,Solar
+Kidston II,Proposed,270,Solar
+Jemalong Solar Farm,Under construction,50,Solar
+Snowtown North,Proposed,45,Solar
+Waddi Wind and Solar Farm,Proposed,50,Solar
+Beryl Solar Farm,Complete,100,Solar
+Suntop Solar Farm,Proposed,170,Solar
+Darlington Point,Under construction,300,Solar
+Cultana Solar Farm,Proposed,280,Solar
+Bungama Solar Farm,Proposed,280,Solar
+Pallamana Solar Farm,Proposed,176,Solar
