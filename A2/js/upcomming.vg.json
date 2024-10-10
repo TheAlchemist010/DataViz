@@ -22,7 +22,7 @@
       }
     },
     {
-      "calculate": "datum.Capacity",  // Ensure the field is properly referenced
+      "calculate": "datum.Capacity", 
       "as": "Combined Capacity"
     }
   ],
