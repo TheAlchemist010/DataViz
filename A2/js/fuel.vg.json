@@ -6,6 +6,7 @@
   "title": "Energy Generation in Australia by Fuel Type",
   "width": "container",
   "height": 300,
+  "background": "lightgray",
   "vconcat": [
     {
       "layer": [
