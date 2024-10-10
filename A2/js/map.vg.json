@@ -3,6 +3,7 @@
   "title": "Power Stations in Australia",
   "width": "container",
   "height": 300,
+  "background": "lightgray",
   "projection": {"type": "equirectangular"},
   "layer": [
     {
