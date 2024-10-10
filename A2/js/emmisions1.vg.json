@@ -14,7 +14,7 @@
         "oneOf": ["Australia", "France", "United Kingdom", "Italy"]
       }
     },
-    {"filter": "datum.year >= 180"}
+    {"filter": "datum.year >= 1800"}
   ],
   "layer": [
     {
