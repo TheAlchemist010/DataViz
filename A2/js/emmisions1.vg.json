@@ -28,7 +28,7 @@
         "y": {
           "field": "co2",
           "type": "quantitative",
-          "axis": {"title": "CO2 emissions"},
+          "axis": {"title": "CO2 emissions (Tonnes)"},
           "scale": {"domainMin": 0}
         },
         "color": {
@@ -46,7 +46,7 @@
         },
         "tooltip": [
           {"field": "year", "type": "quantitative", "title": "Year"},
-          {"field": "co2", "type": "quantitative", "title": "CO2 emissions"},
+          {"field": "co2", "type": "quantitative", "title": "CO2 emissions (Tonnes)"},
           {"field": "country", "type": "nominal", "title": "Country"}
         ]
       }
