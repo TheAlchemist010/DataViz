@@ -9,10 +9,22 @@
   "background": "lightgray",
   "vconcat": [
     {
+      "transform": [
+        {
+          "filter": "datum.Generation != null && datum.Generation != ''"
+        },
+        {
+          "calculate": "datum.Fuel === 'Large-scale solar PV' || datum.Fuel === 'Small-scale solar PV' || datum.Fuel === 'Small-scale solar PV' ? 'Solar' : datum.Fuel === 'Bagasse wood' || datum.Fuel === 'Biogas' ? 'Biomass' : datum.Fuel",
+          "as": "Fuel Group"
+        },
+        {
+          "filter": "datum['Fuel Group'] != 'Biomass'"
+        }
+      ],
       "layer": [
         {
           "selection": {
-            "FuelType": {"type": "multi", "fields": ["Fuel"], "bind": "legend"},
+            "FuelType": {"type": "multi", "fields": ["Fuel Group"], "bind": "legend"},
             "grid": {"type": "interval", "bind": "scales"},
             "hover": {"type": "single", "on": "mouseover", "empty": "none"}
           },
@@ -20,7 +32,8 @@
           "encoding": {
             "x": {
               "field": "Year",
-              "type": "ordinal",
+              "type": "temporal",
+              "timeUnit": "year",
               "axis": {"title": "Year"}
             },
             "y": {
@@ -30,7 +43,7 @@
               "scale": {"domainMin": 0}
             },
             "color": {
-              "field": "Fuel",
+              "field": "Fuel Group",
               "type": "nominal",
               "legend": {"title": "Fuel Type"}
             },
@@ -43,81 +56,19 @@
               "value": 1.5
             },
             "tooltip": [
-              {"field": "Fuel", "type": "nominal", "title": "Fuel Type"},
-              {"field": "Year", "type": "ordinal", "title": "Year"},
+              {"field": "Fuel Group", "type": "nominal", "title": "Fuel Type"},
+              {
+                "field": "Year",
+                "type": "temporal",
+                "timeUnit": "year", 
+                "title": "Year"
+              },
               {
                 "field": "Generation",
                 "type": "quantitative",
                 "title": "Generation (GWh)"
               }
             ]
-          }
-        },
-        {
-          "mark": {"type": "text", "fontSize": 11, "color": "Black"},
-          "transform": [{"filter": {"field": "Year", "equal": "1998-99"}}],
-          "encoding": {
-            "x": {
-              "field": "Year",
-              "type": "ordinal",
-              "axis": {
-                "title": "Year",
-                "labelAngle": -45,
-                "tickCount": 10  
-              }
-            },
-            "y": {"aggregate": "max", "field": "Generation"},
-            "text": {
-              "value": ["At the turn of the century,", "black coal peaked"]
-            },
-            "opacity": {
-              "condition": {"selection": "FuelType", "value": 1},
-              "value": 0.2
-            }
-          }
-        },
-        {
-          "mark": {"type": "rule", "color": "gray", "strokeWidth": 2},
-          "transform": [{"filter": {"field": "Year", "equal": "2000-01"}}],
-          "encoding": {
-            "x": {"field": "Year"},
-            "y": {"aggregate": "min", "field": "Generation"},
-            "y2": {"aggregate": "max", "field": "Generation"},
-            "opacity": {
-              "condition": {"selection": "FuelType", "value": 1},
-              "value": 0.2
-            }
-          }
-        },
-        {
-          "mark": {"type": "text", "fontSize": 11, "color": "Black"},
-          "transform": [{"filter": {"field": "Year", "equal": "2011-12"}}],
-          "encoding": {
-            "x": {"field": "Year"},
-            "y": {"aggregate": "mean", "field": "Generation"},
-            "text": {
-              "value": [
-                "In 2015, the first large-scale",
-                "solar plant went online"
-              ]
-            },
-            "opacity": {
-              "condition": {"selection": "FuelType", "value": 1},
-              "value": 0.2
-            }
-          }
-        },
-        {
-          "mark": {"type": "rule", "color": "gray", "strokeWidth": 2},
-          "transform": [{"filter": {"field": "Year", "equal": "2014-15"}}],
-          "encoding": {
-            "x": {"field": "Year"},
-            "y": {"aggregate": "min", "field": "Generation"},
-            "y2": {"aggregate": "max", "field": "Generation"},
-            "opacity": {
-              "condition": {"selection": "FuelType", "value": 1},
-              "value": 0.2
-            }
           }
         }
       ]
