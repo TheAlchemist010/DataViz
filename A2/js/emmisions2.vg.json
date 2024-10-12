@@ -34,7 +34,7 @@
         "y": {
           "field": "co2_per_capita",
           "type": "quantitative",
-          "axis": {"title": "CO2 emissions per capita"},
+          "axis": {"title": "CO2 emissions per capita (Tonnes)"},
           "scale": {"domainMin": 0}
         },
         "color": {
@@ -55,7 +55,7 @@
         },
         "tooltip": [
           {"field": "year", "type": "quantitative", "title": "Year"},
-          {"field": "co2_per_capita", "type": "quantitative", "title": "CO2 emissions per capita"},
+          {"field": "co2_per_capita", "type": "quantitative", "title": "CO2 emissions per capita (Tonnes)"},
           {"field": "country", "type": "nominal", "title": "Country"}
         ]
       }
