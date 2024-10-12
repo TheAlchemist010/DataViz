@@ -4,74 +4,95 @@
     "url": "https://raw.githubusercontent.com/TheAlchemist010/DataViz/refs/heads/main/Week10/data/ByFuelOverTime.csv"
   },
   "title": "Energy Generation in Australia by Fuel Type",
-  "width": "container",
+  "width": 1000,
   "height": 300,
   "background": "lightgray",
   "transform": [
+    {"filter": "datum.Generation != null && datum.Generation != ''"},
+    {
+      "calculate": "datum.Fuel === 'Large-scale solar PV' || datum.Fuel === 'Small-scale solar PV' || datum.Fuel === 'Wind' ? 'Solar/Wind' : datum.Fuel === 'Bagasse wood' || datum.Fuel === 'Biogas' ? 'Biomass' : datum.Fuel ",
+      "as": "Fuel Group"
+    },
+    {
+      "calculate": "substring(datum.Year, 0, 4)",
+      "as": "Year Group"
+    },
+    {
+      "aggregate": [
         {
-          "filter": "datum.Generation != null && datum.Generation != ''"
-        },
-        {
-          "calculate": "datum.Fuel === 'Large-scale solar PV' || datum.Fuel === 'Small-scale solar PV' || datum.Fuel === 'Small-scale solar PV' ? 'Solar' : datum.Fuel === 'Bagasse wood' || datum.Fuel === 'Biogas' ? 'Biomass' : datum.Fuel",
-          "as": "Fuel Group"
-        },
-        {
-          "filter": "datum['Fuel Group'] != 'Biomass'"
-        }
-        ,
-        {
-          "filter": "datum['Fuel Group'] != 'Oil products'"
+          "op": "sum",
+          "field": "Generation",
+          "as": "Total Generation"
         }
       ],
-      "layer": [
-        {
-          "selection": {
-            "FuelType": {"type": "multi", "fields": ["Fuel Group"], "bind": "legend"},
-            "grid": {"type": "interval", "bind": "scales"},
-            "hover": {"type": "single", "on": "mouseover", "empty": "none"}
+      "groupby": ["Year Group", "Fuel Group"]
+    }
+  ],
+  "layer": [
+    {
+      "selection": {
+        "FuelType": {
+          "type": "multi",
+          "fields": ["Fuel Group"],
+          "bind": "legend"
+        },
+        "hover": {"type": "single", "on": "mouseover", "empty": "none"}
+      },
+      "mark": {"type": "line", "point": true},
+      "encoding": {
+        "x": {
+          "field": "Year Group",
+          "type": "ordinal",
+          "axis": {"title": "Year"}
+        },
+        "y": {
+          "field": "Total Generation",
+          "type": "quantitative",
+          "axis": {"title": "Generation (in GWh)"},
+          "scale": {"domainMin": 0}
+        },
+        "color": {
+          "field": "Fuel Group",
+          "type": "nominal",
+          "legend": {"title": "Fuel Type"},
+          "scale": {
+        "domain": [
+          "Black coal",
+          "Brown coal",
+          "Solar/Wind",
+          "Hydro",
+          "Biomass",
+          "Natural gas"
+        ],
+        "range": [
+          "#011111",
+          "#612121",
+          "#21c633",
+          "#11ebcb",
+          "#ff7b44",
+          "#ff0000"
+        ]
+      }
+        },
+        "opacity": {
+          "condition": {"selection": "FuelType", "value": 1},
+          "value": 0.2
+        },
+        "size": {"condition": {"selection": "hover", "value": 3}, "value": 1.5},
+        "tooltip": [
+          {"field": "Fuel Group", "type": "nominal", "title": "Fuel Type"},
+          {
+            "field": "Year Group",
+            "type": "ordinal",
+            "title": "Year"
           },
-          "mark": {"type": "line", "point": true},
-          "encoding": {
-            "x": {
-              "field": "Year",
-              "type": "temporal",
-              "timeUnit": "year",
-              "axis": {"title": "Year"}
-            },
-            "y": {
-              "field": "Generation",
-              "type": "quantitative",
-              "axis": {"title": "Generation (in GWh)"},
-              "scale": {"domainMin": 0}
-            },
-            "color": {
-              "field": "Fuel Group",
-              "type": "nominal",
-              "legend": {"title": "Fuel Type"}
-            },
-            "opacity": {
-              "condition": {"selection": "FuelType", "value": 1},
-              "value": 0.2
-            },
-            "size": {
-              "condition": {"selection": "hover", "value": 3},
-              "value": 1.5
-            },
-            "tooltip": [
-              {"field": "Fuel Group", "type": "nominal", "title": "Fuel Type"},
-              {
-                "field": "Year",
-                "type": "temporal",
-                "timeUnit": "year", 
-                "title": "Year"
-              },
-              {
-                "field": "Generation",
-                "type": "quantitative",
-                "title": "Generation (GWh)"
-              }
-            ]
+          {
+            "field": "Total Generation",
+            "type": "quantitative",
+            "title": "Total Generation (GWh)"
           }
-        }
-      ]
+        ]
+      }
+    }
+  ]
 }
