@@ -12,7 +12,6 @@
       "filter": {
         "not": {
           "or": [
-            {"field": "Status", "equal": "Rejected"},
             {"field": "Status", "equal": "Abandoned"},
             {"field": "Status", "equal": "Possibly abandoned"},
             {"field": "Status", "equal": "Cancelled"},
@@ -22,19 +21,12 @@
         }
       }
     },
-    {
-      "calculate": "datum.Capacity",
-      "as": "Combined Capacity"
-    }
+    {"calculate": "datum.Capacity", "as": "Combined Capacity"}
   ],
   "mark": "bar",
   "encoding": {
+    "y": {"field": "Type", "type": "ordinal", "axis": {"title": "Fuel Type"}},
     "x": {
-      "field": "Type",
-      "type": "ordinal",
-      "axis": {"title": "Fuel Type"}
-    },
-    "y": {
       "field": "Capacity",
       "type": "quantitative",
       "aggregate": "sum",
@@ -49,27 +41,19 @@
           "On hold",
           "Pre-construction",
           "Proposed",
-          "Under construction"
+          "Under construction",
+          "Rejected"
         ],
-        "range": [
-          "#4caf50", 
-          "#ff9800", 
-          "#2196f3", 
-          "#ffeb3b", 
-          "#ff5722"
-        ]
+        "range": ["#4caf50", "#ff9800", "#2196f3", "#ffeb3b", "#ff7b44", "#ff0000"]
       },
       "legend": {"title": "Project Status"}
     },
     "tooltip": [
+      {"field": "Project name", "title": "Project name"},
       {"field": "Type", "title": "Fuel Type"},
       {"field": "Status", "title": "Project Status"},
-      {"field": "Combined Capacity", "title": "Energy Generation"} 
+      {"field": "Combined Capacity", "title": "Energy Generation"}
     ]
   },
-  "config": {
-    "bar": {
-      "opacity": 0.8
-    }
-  }
+  "config": {"bar": {"opacity": 0.8}}
 }
