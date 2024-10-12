@@ -20,7 +20,7 @@
   ],
   "layer": [
     {
-      "mark": {"type": "line", "point": true},
+      "mark": {"type": "line"},
       "encoding": {
         "x": {
           "field": "year",
