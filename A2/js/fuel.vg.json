@@ -7,9 +7,7 @@
   "width": "container",
   "height": 300,
   "background": "lightgray",
-  "vconcat": [
-    {
-      "transform": [
+  "transform": [
         {
           "filter": "datum.Generation != null && datum.Generation != ''"
         },
@@ -72,6 +70,4 @@
           }
         }
       ]
-    }
-  ]
 }
