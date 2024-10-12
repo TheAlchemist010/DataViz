@@ -13,6 +13,7 @@
         "not": {
           "or": [
             {"field": "Status", "equal": "Abandoned"},
+            {"field": "Status", "equal": "Complete"},
             {"field": "Status", "equal": "Possibly abandoned"},
             {"field": "Status", "equal": "Cancelled"},
             {"field": "Type", "equal": "Landfill Gas"},
@@ -20,10 +21,14 @@
           ]
         }
       }
-    },
-    {"calculate": "datum.Capacity", "as": "Combined Capacity"}
+    }
   ],
-  "mark": "bar",
+  "mark": {
+    "type": "bar",
+    "opacity": 0.8,
+    "stroke": "black",
+    "strokeWidth": 1 
+  },
   "encoding": {
     "y": {"field": "Type", "type": "ordinal", "axis": {"title": "Fuel Type"}},
     "x": {
@@ -44,7 +49,14 @@
           "Under construction",
           "Rejected"
         ],
-        "range": ["#4caf50", "#ff9800", "#2196f3", "#ffeb3b", "#ff7b44", "#ff0000"]
+        "range": [
+          "#4caf50",
+          "#ff9800",
+          "#2196f3",
+          "#ffeb3b",
+          "#ff7b44",
+          "#ff0000"
+        ]
       },
       "legend": {"title": "Project Status"}
     },
