@@ -25,7 +25,9 @@
   ],
   "mark": {
     "type": "bar",
-    "opacity": 0.8 
+    "opacity": 0.8,
+    "stroke": "black",
+    "strokeWidth": 1 
   },
   "encoding": {
     "y": {"field": "Type", "type": "ordinal", "axis": {"title": "Fuel Type"}},
