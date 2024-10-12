@@ -1,71 +1,98 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Upcoming Projects",
+  "data": {
+    "url": "https://raw.githubusercontent.com/TheAlchemist010/DataViz/refs/heads/main/Week10/data/ByFuelOverTime.csv"
+  },
+  "title": "Energy Generation in Australia by Fuel Type",
   "width": "container",
   "height": 300,
   "background": "lightgray",
-  "data": {
-    "url": "https://raw.githubusercontent.com/TheAlchemist010/DataViz/refs/heads/main/A2/data/UpcomingPlants.csv"
-  },
   "transform": [
+    {"filter": "datum.Generation != null && datum.Generation != ''"},
     {
-      "filter": {
-        "not": {
-          "or": [
-            {"field": "Status", "equal": "Abandoned"},
-            {"field": "Status", "equal": "Complete"},
-            {"field": "Status", "equal": "Possibly abandoned"},
-            {"field": "Status", "equal": "Cancelled"},
-            {"field": "Type", "equal": "Landfill Gas"},
-            {"field": "Type", "equal": "Fossil Fuel/Solar"}
-          ]
+      "calculate": "datum.Fuel === 'Large-scale solar PV' || datum.Fuel === 'Small-scale solar PV' || datum.Fuel === 'Wind' ? 'Solar/Wind' : datum.Fuel === 'Bagasse wood' || datum.Fuel === 'Biogas' ? 'Biomass' : datum.Fuel ",
+      "as": "Fuel Group"
+    },
+    {
+      "calculate": "substring(datum.Year, 0, 4)",
+      "as": "Year Group"
+    },
+    {
+      "aggregate": [
+        {
+          "op": "sum",
+          "field": "Generation",
+          "as": "Total Generation"
         }
-      }
+      ],
+      "groupby": ["Year Group", "Fuel Group"]
     }
   ],
-  "mark": {
-    "type": "bar",
-    "opacity": 0.8,
-    "stroke": "black",
-    "strokeWidth": 1 
-  },
-  "encoding": {
-    "y": {"field": "Type", "type": "ordinal", "axis": {"title": "Fuel Type"}},
-    "x": {
-      "field": "Capacity",
-      "type": "quantitative",
-      "aggregate": "sum",
-      "axis": {"title": "Total Energy Generation (MWH)"}
-    },
-    "color": {
-      "field": "Status",
-      "type": "nominal",
-      "scale": {
+  "layer": [
+    {
+      "selection": {
+        "FuelType": {
+          "type": "multi",
+          "fields": ["Fuel Group"],
+          "bind": "legend"
+        },
+        "hover": {"type": "single", "on": "mouseover", "empty": "none"}
+      },
+      "mark": {"type": "line", "point": true},
+      "encoding": {
+        "x": {
+          "field": "Year Group",
+          "type": "ordinal",
+          "axis": {"title": "Year"}
+        },
+        "y": {
+          "field": "Total Generation",
+          "type": "quantitative",
+          "axis": {"title": "Generation (in GWh)"},
+          "scale": {"domainMin": 0}
+        },
+        "color": {
+          "field": "Fuel Group",
+          "type": "nominal",
+          "legend": {"title": "Fuel Type"},
+          "scale": {
         "domain": [
-          "Approved",
-          "On hold",
-          "Pre-construction",
-          "Proposed",
-          "Under construction",
-          "Rejected"
+          "Black coal",
+          "Brown coal",
+          "Solar/Wind",
+          "Hydro",
+          "Biomass",
+          "Natural gas"
         ],
         "range": [
-          "#4caf50",
-          "#ff9800",
-          "#2196f3",
-          "#ffeb3b",
+          "#011111",
+          "#612121",
+          "#21c633",
+          "#11ebcb",
           "#ff7b44",
           "#ff0000"
         ]
-      },
-      "legend": {"title": "Project Status"}
-    },
-    "tooltip": [
-      {"field": "Project name", "title": "Project name"},
-      {"field": "Type", "title": "Fuel Type"},
-      {"field": "Status", "title": "Project Status"},
-      {"field": "Combined Capacity", "title": "Energy Generation"}
-    ]
-  },
-  "config": {"bar": {"opacity": 0.8}}
+      }
+        },
+        "opacity": {
+          "condition": {"selection": "FuelType", "value": 1},
+          "value": 0.2
+        },
+        "size": {"condition": {"selection": "hover", "value": 3}, "value": 1.5},
+        "tooltip": [
+          {"field": "Fuel Group", "type": "nominal", "title": "Fuel Type"},
+          {
+            "field": "Year Group",
+            "type": "ordinal",
+            "title": "Year"
+          },
+          {
+            "field": "Total Generation",
+            "type": "quantitative",
+            "title": "Total Generation (GWh)"
+          }
+        ]
+      }
+    }
+  ]
 }
