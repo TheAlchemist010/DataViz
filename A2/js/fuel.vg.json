@@ -18,6 +18,10 @@
         {
           "filter": "datum['Fuel Group'] != 'Biomass'"
         }
+        ,
+        {
+          "filter": "datum['Fuel Group'] != 'Oil products'"
+        }
       ],
       "layer": [
         {
