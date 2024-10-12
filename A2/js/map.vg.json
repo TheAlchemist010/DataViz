@@ -4,7 +4,41 @@
   "width": "container",
   "height": 300,
   "background": "lightgray",
-  "projection": {"type": "equirectangular"},
+  "projection": {
+    "type": "equirectangular",
+    "scale": {"expr": "zoom_level"},
+    "center": {"expr": "center_to"}
+    },
+  "params": [
+    {
+      "name": "zoom_level",
+      "value": 400,
+      "bind": {
+      "input": "range",
+      "min": 400,
+      "max": 2000,
+      "step": 10,
+      "name": "Zoom: "
+      }
+    },
+    {
+      "name": "center_to",
+      "value": [135, -27.95],
+      "bind": {
+      "input": "select",
+      "options": [
+      [135, -27.95],
+      [144.3, -38.1],
+      [149.3, -32.1],
+      [136.3, -34.1],
+      [149.3, -22.1],
+      [119.3, -32.1]
+      ],
+      "labels": ["Central Australia", "Victoria", "New South Whales", "South Australia", "Queensland", "Perth"],
+      "name": "Map Centre: "
+      }
+    }
+  ],
   "layer": [
     {
       "data": {
@@ -37,14 +71,34 @@
           "type": "nominal",
           "title": "Fuel Type",
           "scale": {
-            "domain": ["Coal", "Gas", "Bioenergy", "Oil", "Solar", "Hydro", "Wind"],
-            "range": ["#402020", "#ff7f0e", "#2ca02c", "#d62728", "#bcbd22", "#17becf", "#9467bd"]
+            "domain": [
+              "Coal",
+              "Gas",
+              "Bioenergy",
+              "Oil",
+              "Solar",
+              "Hydro",
+              "Wind"
+            ],
+            "range": [
+              "#402020",
+              "#ff7f0e",
+              "#2ca02c",
+              "#d62728",
+              "#bcbd22",
+              "#17becf",
+              "#9467bd"
+            ]
           }
         },
         "tooltip": [
           {"field": "NAME", "type": "nominal", "title": "Name"},
           {"field": "FUEL_GROUP", "type": "nominal", "title": "Fuel Type"},
-          {"field": "GENERATIONMW", "type": "quantitative", "title": "Generation (MWH)"},
+          {
+            "field": "GENERATIONMW",
+            "type": "quantitative",
+            "title": "Generation (MWH)"
+          },
           {"field": "LATITUDE", "type": "quantitative", "title": "Latitude"},
           {"field": "LONGITUDE", "type": "quantitative", "title": "Longitude"},
           {"field": "SUBURB", "type": "nominal", "title": "Suburb"}
