@@ -1,0 +1,41 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/TheAlchemist010/DataViz/refs/heads/main/A2/data/20210908_cli_001_graph-forplot.csv"
+  },
+  "title": "Yearly Mean Temperature Deviation (°C) from 1910",
+  "width": "container",
+  "background": "lightgray",
+  "height": 300,
+  "transform": [
+    {
+      "calculate": "parseFloat(datum.Temperature) + 0.5",
+      "as": "Adjusted_Temperature"
+    }
+  ],
+  "layer": [
+    {
+      "mark": {"type": "line", "color": "black"},
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "quantitative",
+          "axis": {
+            "title": "Year",
+            "tickCount": 10,
+            "format": ".0f"
+          }
+        },
+        "y": {
+          "field": "Adjusted_Temperature",
+          "type": "quantitative",
+          "axis": {"title": "Temperature Deviation (°C) from 1910"}
+        },
+        "tooltip": [
+          {"field": "Year", "type": "quantitative", "title": "Year"},
+          {"field": "Adjusted_Temperature", "type": "quantitative", "title": "Temperature Deviation (°C) from 1910"}
+        ]
+      }
+    }
+  ]
+}
