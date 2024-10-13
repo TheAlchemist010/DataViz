@@ -17,7 +17,7 @@
 			max-width: 100%;
 		      }
 			
-		      #map, #fuel, #emmisions1, #emmisions2, #upcomming, #tempchange {
+		      #map, #fuel, #emmisions1, #emmisions2, #upcomming, #tempchange, #fossilfuelexport {
 			  width: 100%;
 			  height: 400px;
 			  box-sizing: border-box; /* Ensure padding is included in the width/height calculation */
@@ -74,7 +74,9 @@
 					<div id="tempchange"></div>
 				</div>
 			</div>
+
 			
+			<div id="fossilfuelexport"></div>
 		</div>
 
 		
@@ -87,6 +89,7 @@
 			vegaEmbed('#emmisions2', "js/emmisions2.vg.json").then(function(result) {}).catch(console.error);
 			vegaEmbed('#upcomming', "js/upcomming.vg.json").then(function(result) {}).catch(console.error);
 			vegaEmbed('#tempchange', "js/tempchange.vg.json").then(function(result) {}).catch(console.error);
+			vegaEmbed('#fossilfuelexport', "js/fossilfuelexport.vg.json").then(function(result) {}).catch(console.error);
 
 		</script>
 	</body>
