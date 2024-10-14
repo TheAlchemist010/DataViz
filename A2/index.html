@@ -125,6 +125,7 @@
     </script>
 	
 	<script type="text/javascript">
+		window.onload = function() {
   			//vegaEmbed('#map', "js/map.vg.json").then(function(result) {}).catch(console.error);
 			//vegaEmbed('#fuel', "js/fuel.vg.json").then(function(result) {}).catch(console.error);
 			
@@ -133,7 +134,7 @@
 			vegaEmbed('#upcomming', "js/upcomming.vg.json").then(function(result) {}).catch(console.error);
 			vegaEmbed('#tempchange', "js/tempchange.vg.json").then(function(result) {}).catch(console.error);
 			//vegaEmbed('#fossilfuelexport', "js/fossilfuelexport.vg.json").then(function(result) {}).catch(console.error);
-
+		}
 		</script>
 </body>
 </html>
