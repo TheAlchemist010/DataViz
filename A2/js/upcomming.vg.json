@@ -23,12 +23,7 @@
       }
     }
   ],
-  "mark": {
-    "type": "bar",
-    "opacity": 0.8,
-    "stroke": "black",
-    "strokeWidth": 1 
-  },
+  "mark": {"type": "bar", "opacity": 0.8, "stroke": "black", "strokeWidth": 1},
   "encoding": {
     "y": {"field": "Type", "type": "ordinal", "axis": {"title": "Fuel Type"}},
     "x": {
@@ -64,7 +59,7 @@
       {"field": "Project name", "title": "Project name"},
       {"field": "Type", "title": "Fuel Type"},
       {"field": "Status", "title": "Project Status"},
-      {"field": "Combined Capacity", "title": "Energy Generation"}
+      {"field": "sum_Capacity", "title": "Energy Generation"}
     ]
   },
   "config": {"bar": {"opacity": 0.8}}
