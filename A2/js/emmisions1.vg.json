@@ -34,7 +34,8 @@
         "color": {
           "field": "country",
           "type": "nominal",
-          "legend": {"title": "Country"},
+          "legend": {"title": "Country", "orient": "bottom"},
+          v
           "scale": {
             "domain": ["Australia", "France", "United Kingdom", "Italy"],
             "range": ["#007ad1", "#b78457", "#577557", "#a65959"]
