@@ -5,7 +5,7 @@
   },
   "title": "Yearly Mean Temperature Deviation (°C) from 1910",
   "width": "container",
-  "background": "lightgray",
+  "background": "#eaf2f8",
   "height": 300,
   "transform": [
     {
