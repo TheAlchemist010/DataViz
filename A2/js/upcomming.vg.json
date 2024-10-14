@@ -59,7 +59,7 @@
       {"field": "Project name", "title": "Project name"},
       {"field": "Type", "title": "Fuel Type"},
       {"field": "Status", "title": "Project Status"},
-      {"field": "Combined Capacity", "title": "Energy Generation"}
+      {"field": "sum_Capacity", "title": "Energy Generation"}
     ]
   },
   "config": {"bar": {"opacity": 0.8}}
