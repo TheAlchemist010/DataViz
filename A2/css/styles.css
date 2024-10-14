@@ -18,7 +18,7 @@ body {
 
 /* Timeline Sidebar */
 .timeline {
-    width: 250px;
+    width: 200px;
     background-color: #fff;
     padding: 20px;
     border-right: 1px solid #ddd;
@@ -28,7 +28,7 @@ body {
 /* Single continuous vertical line */
 .timeline .timeline-line {
     position: absolute;
-    left: 57px;
+    left: 48px;
     top: 0;
     bottom: 0;
     width: 4px;
@@ -67,14 +67,14 @@ body {
     white-space: nowrap;
     margin-right: 10px;
     z-index: 2;
-    font-size: 1rem;
+	font-size: 1rem;
 }
 
 /* Horizontal line connector between year and content */
 .timeline-item .connector {
     position: absolute;
-    left: 70px;
-    width: 35px;
+    left: 50px;
+    width: 22px;
     height: 4px;
     background-color: #3498db;
     z-index: 1;
@@ -86,7 +86,7 @@ body {
     padding: 8px 12px;
     border: 1px solid #ddd;
     border-radius: 4px;
-    margin-left: 20px;
+    margin-left: 10px;
     flex-grow: 1;
 }
 
