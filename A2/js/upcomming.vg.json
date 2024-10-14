@@ -30,7 +30,7 @@
       "field": "Capacity",
       "type": "quantitative",
       "aggregate": "sum",
-      "axis": {"title": "Total Energy Generation (MWH)"}
+      "axis": {"title": "Total Energy Generation (MWH)", "ticks": false, "tickCount": 4}
     },
     "color": {
       "field": "Status",
@@ -59,7 +59,7 @@
       {"field": "Project name", "title": "Project name"},
       {"field": "Type", "title": "Fuel Type"},
       {"field": "Status", "title": "Project Status"},
-      {"field": "sum_Capacity", "title": "Energy Generation"}
+      {"field": "Combined Capacity", "title": "Energy Generation"}
     ]
   },
   "config": {"bar": {"opacity": 0.8}}
