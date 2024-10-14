@@ -5,7 +5,7 @@
   },
   "title": "Carbon Emissions per Capita",
   "width": "container",
-  "background": "lightgray",
+  "background": "#eaf2f8",
   "height": 300,
   "transform": [
     {
