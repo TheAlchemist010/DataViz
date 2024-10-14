@@ -168,6 +168,14 @@ body {
     top: 95%;
 }
 
+#map, #fuel, #emmisions1, #emmisions2, #upcomming, #tempchange, #fossilfuelexport {
+			  width: 100%;
+			  height: 400px;
+			  box-sizing: border-box; 
+			  margin: 10px 0; 
+			  max-width: 100%;
+			}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .container {
@@ -181,13 +189,21 @@ body {
     }
 
     .main-content {
-        padding
+        padding: 20px;
+    }
 
+    .timeline-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 
-#map, #fuel, #emmisions1, #emmisions2, #upcomming, #tempchange, #fossilfuelexport {
-			  width: 100%;
-			  height: 400px;
-			  box-sizing: border-box; 
-			  margin: 10px 0; 
-			  max-width: 100%;
-			}
+    .timeline .timeline-line, .timeline-item .connector {
+        display: none; /* Hide lines on mobile for clarity */
+    }
+
+    /* Adjust content blocks */
+    .block::before {
+        display: none;
+    }
+}
+
