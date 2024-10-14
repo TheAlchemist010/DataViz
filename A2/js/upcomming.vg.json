@@ -3,7 +3,7 @@
   "title": "Upcoming Projects",
   "width": "container",
   "height": 300,
-  "background": "lightgray",
+  "background": "#eaf2f8",
   "data": {
     "url": "https://raw.githubusercontent.com/TheAlchemist010/DataViz/refs/heads/main/A2/data/UpcomingPlants.csv"
   },
