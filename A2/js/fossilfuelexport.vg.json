@@ -10,7 +10,7 @@
   "title": "Australian Fossil Fuel Export Destinations ($USD)",
   "projection": {"type": "equalEarth", "rotate": [-150, 0, 0]},
   "width": "container",
-  "background": "lightgray",
+  "background": "#eaf2f8",
   "height": 300,
   "layer": [
     {
