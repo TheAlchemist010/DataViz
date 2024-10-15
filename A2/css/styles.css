@@ -51,7 +51,7 @@ body {
     position: relative;
     display: flex;
     align-items: center;
-    min-height: 40px;
+    min-height: 30px;
     margin-bottom: 10px;
     justify-content: flex-start;
 }
@@ -67,7 +67,7 @@ body {
     white-space: nowrap;
     margin-right: 10px;
     z-index: 2;
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
 
 /* Horizontal line connector between year and content */
