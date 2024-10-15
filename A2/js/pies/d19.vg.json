@@ -1,0 +1,64 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/TheAlchemist010/DataViz/refs/heads/main/A2/data/Election_Data.csv"
+  },
+   "title": {
+    "text": [
+      "Do you think that global warming will pose",
+      "a serious threat to your way of life",
+      "in your lifetime?"
+    ]
+  },
+  "width": "container",
+  "background": "#eaf2f8",
+  "height": 300,
+  "transform": [
+    {
+      "aggregate": [{"op": "count", "as": "count"}],
+      "groupby": ["d19"]
+    },
+    {
+      "filter": {
+        "field": "d19",
+        "oneOf": [1, 2, 3]
+      }
+    },
+    {
+      "lookup": "d19",
+      "from": {
+        "key": "value",
+        "fields": ["label"],
+        "data": { "values": [
+          {"value": 1, "label": "Yes"},
+          {"value": 3, "label": "Depends"},
+          {"value": 2, "label": "No"}
+        ]}
+      }
+    }
+  ],
+  "layer": [
+    {
+      "mark": {"type": "arc"},
+      "encoding": {
+        "theta": {
+          "field": "count",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "label",  
+          "type": "nominal",
+          "legend": {"title": "Response", "orient": "bottom"},
+          "scale": {
+            "domain": ["Yes", "Depends", "No"],
+            "range": ["Green", "Grey", "Red"]
+          }
+        },
+        "tooltip": [
+          {"field": "label", "title": "Response"},  
+          {"field": "count", "title": "Count"}
+        ]
+      }
+    }
+  ]
+}
