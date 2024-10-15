@@ -7,16 +7,15 @@
     <title>Australia's Renewable Transition</title>
     <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css">
     <link rel="stylesheet" href="css/styles.css">
-	<script src="https://cdn.jsdelivr.net/npm/vega@5.30.0"></script>
-   	<script src="https://cdn.jsdelivr.net/npm/vega-lite@5.21.0"></script>
-   	<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.26.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.30.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.21.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.26.0"></script>
 </head>
 <body>
     <div class="container">
         <div class="timeline">
             <div class="timeline-line"></div>
-            <ul id="timeline-list">
-            </ul>
+            <ul id="timeline-list"></ul>
         </div>
 
         <div class="main-content">
@@ -25,91 +24,91 @@
             <div class="content-blocks">
 		    
                 <div class="block" id="block-1970">
-                    <h2>1970s: The Rise of Enviromentalism</h2>
-			<div class="pure-g">
-	                   	<div class="pure-u-2-5">
-					<div id="tempchange"></div>	
-				</div>
-				<div class="pure-u-3-5">
-					<p>Throughout the 1970s, Australia began to see a rise in enviromental concern by the general public. 1970 marked the first global Earth Day, and the mid-70s held some of the first major enviromental activism. Interestingly, much of this activism was focused towards damming projects, such as Lake Pedder and the Franklin Dam. The 1970s also included the foundational reasearch into the greenhouse effect and polution, including the observation that the globe was warming. The rate seemed very minor in the 70s, but today the climate is rapidly heating.</p>
-				</div>
-			</div>
-		</div>
+                    <h2>1970s: The Rise of Environmentalism</h2>
+                    <div class="pure-g">
+                        <div class="pure-u-2-5">
+                            <div id="tempchange"></div>    
+                        </div>
+                        <div class="pure-u-3-5">
+                            <p>Throughout the 1970s, Australia began to see a rise in environmental concern from the general public. 1970 marked the first global Earth Day, and the mid-70s saw some of the first major environmental activism. Much of this activism focused on dam projects, such as Lake Pedder and the Franklin Dam. The 1970s also saw foundational research into the greenhouse effect and pollution, including the observation that the globe was warming. Though the rate of warming seemed minor in the 70s, today the climate is rapidly heating.</p>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="block" id="block-2000">
                     <h2>2000: The Peak of Coal</h2>
                     <div class="pure-g">
-			    			<div class="pure-u-2-3">
-							<div id="fuel"></div>
-						</div>
-						<div class="pure-u-1-3">
-							<p>With the turn of the century, Australia hit its all-time peak in its generation of electricity using both black and brown coal. In the 20th century, solar and wind were almost non-existant. But with new technological innovation and a new understanding that coal was no longer the future, investments in renewables (and other fossil fuels) began to rise rapidly.</p>
-						</div>
-					</div>
+                        <div class="pure-u-2-3">
+                            <div id="fuel"></div>
+                        </div>
+                        <div class="pure-u-1-3">
+                            <p>At the turn of the century, Australia reached its all-time peak in electricity generation using both black and brown coal. In the 20th century, solar and wind were almost non-existent. However, with new technological innovations and a growing understanding that coal was not the future, investments in renewables (and other fossil fuels) began to rise rapidly.</p>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="block" id="block-2007">
                     <h2>2007: Australia Signs the Kyoto Protocol</h2>
                     <div class="pure-g">
-						<div class="pure-u-1-3">
-							<p>As the first act of the Rudd government, Australia signed the Kyoto Protocl.  <br> <i>"Australia's official declaration today that we will become a member of the Kyoto Protocol is a significant step forward in our country's efforts to fight climate change domestically – and with the international community."</i><br>Australia also implemented a number of policies intending to decrease Australia's emissions, such as a <b>carbon tax</b> and an <b>emissions trading scheme</b>. During this time, enviromentism was becoming increasinly popular. Most Australians agreed that we need higher emissions standards and to invest more into renewables.</p>
-							 <img src="legend.png" alt="Legend">
-						</div>
-			    			<div class="pure-u-2-3">
-							<div class="pure-g">
-								<div class="pure-u-1-3"><div id="pie1"></div><div id="pie4"></div></div>
-								<div class="pure-u-1-3"><div id="pie2"></div><div id="pie5"></div></div>
-								<div class="pure-u-1-3"><div id="pie3"></div><div id="pie6"></div></div>
-							</div>
-							
-						</div>
-					</div>
+                        <div class="pure-u-1-3">
+                            <p>As the first act of the Rudd government, Australia signed the Kyoto Protocol. <br> 
+                            <i>"Australia's official declaration today that we will become a member of the Kyoto Protocol is a significant step forward in our country's efforts to fight climate change domestically – and with the international community."</i> <br> 
+                            Australia also implemented several policies aimed at reducing emissions, such as a <b>carbon tax</b> and an <b>emissions trading scheme</b>. During this time, environmentalism was becoming increasingly popular, and most Australians agreed that stricter emissions standards and more investment in renewables were necessary.</p>
+                            <img src="legend.png" alt="Legend">
+                        </div>
+                        <div class="pure-u-2-3">
+                            <div class="pure-g">
+                                <div class="pure-u-1-3"><div id="pie1"></div><div id="pie4"></div></div>
+                                <div class="pure-u-1-3"><div id="pie2"></div><div id="pie5"></div></div>
+                                <div class="pure-u-1-3"><div id="pie3"></div><div id="pie6"></div></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-		<div class="block" id="block-2013">
+                <div class="block" id="block-2013">
                     <h2>2013: Opposition to Environmental Policies</h2>
                     <div class="pure-g">
-						<div class="pure-u-1-3">
-							<p>The government of Tony Abbott opposed environmental policies and abolished a number of schemes after their 2013 federal election victory. Before this, Australia's carbon emmisions and investment into fossil fuels were slowly decreasing. The abolition of these policies saw a sizable spike, and a backwards step in our energy transition. Even in 2013, the vast majority of Australia's power came from coal. The map to the right is filled with large brown circles representing coal power plants slowly warming the climate.</p>
-						</div>
-			    			<div class="pure-u-2-3">
-							<div id="map"></div>
-						</div>
-					</div>
+                        <div class="pure-u-1-3">
+                            <p>The government of Tony Abbott opposed environmental policies and dismantled a number of schemes after its 2013 federal election victory. Before this, Australia's carbon emissions and investment in fossil fuels had been slowly declining. The repeal of these policies caused a significant spike, reversing progress in the country's energy transition. Even in 2013, the majority of Australia's power was still generated from coal. The map to the right shows large brown circles representing coal power plants that contribute to warming the climate.</p>
+                        </div>
+                        <div class="pure-u-2-3">
+                            <div id="map"></div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="block" id="block-2015">
                     <h2>2015: The Paris Agreement</h2>
-					<div class="pure-g">
-						<div class="pure-u-1-3">
-							<div id="emmisions1"></div>
-						</div>
-						<div class="pure-u-1-3">
-							<p> In 2015, representatives of 197 parties assembled in Paris to decide on the global respose to the global climate. Australia commit to a <b>26-28% reduction emmisions from the 2005 levels</b>. Currently, 194 nations have signed the agreement, representing over 98% of emissions. Though Australian emissions have peaked and are declining, <b>we are actually above the 2005 levels</b>. That being said, the per-capita C02 emissions have decreased significantly since 2005.</p>
-						</div>
-						<div class="pure-u-1-3">
-							<div id="emmisions2"></div>
-						</div>
-					</div>
+                    <div class="pure-g">
+                        <div class="pure-u-1-3">
+                            <div id="emissions1"></div>
+                        </div>
+                        <div class="pure-u-1-3">
+                            <p>In 2015, representatives from 197 parties gathered in Paris to form a global response to climate change. Australia committed to a <b>26-28% reduction in emissions from 2005 levels</b>. Today, 194 nations have signed the agreement, representing over 98% of global emissions. Although Australian emissions have peaked and are now declining, <b>they are still above 2005 levels</b>. However, per-capita CO2 emissions have significantly decreased since 2005.</p>
+                        </div>
+                        <div class="pure-u-1-3">
+                            <div id="emissions2"></div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="block" id="block-2024">
-                    <h2>2024 and the future</h2>
+                    <h2>2024 and the Future</h2>
                     <div class="pure-g">
-						<div class="pure-u-1-3">
-							<p>Though most of Australia's power is currently coming from fossil fuels, the vast majority of upcoming and in-construction projects are renewables. There are, however, still some fossil fuel stations being constructed, such as the Reeves Plains Power Station in South Australia that will involve six gas turbines to produce up to 300 megawatts. </p>
-						</div>
-						<div class="pure-u-2-3">
-							<div id="upcomming"></div>
-						</div>
-					</div>
+                        <div class="pure-u-1-3">
+                            <p>Although most of Australia's power is still generated from fossil fuels, the majority of upcoming and in-progress projects are renewables. However, some fossil fuel stations are still under construction, such as the Reeves Plains Power Station in South Australia, which will use six gas turbines to generate up to 300 megawatts of power.</p>
+                        </div>
+                        <div class="pure-u-2-3">
+                            <div id="upcoming"></div>
+                        </div>
+                    </div>
                 </div>
 
-		<div>
-			<h3>Sources</h3>
-		    https://dataverse.ada.edu.au/dataset.xhtml?persistentId=doi:10.4225/87/ZBUOW0
-	    	</div>
+                <div>
+                    <h3>Sources</h3>
+                    <a href="https://dataverse.ada.edu.au/dataset.xhtml?persistentId=doi:10.4225/87/ZBUOW0" target="_blank">Australian Data Archive</a>
+                </div>
             </div>
         </div>
     </div>
@@ -120,10 +119,10 @@
         const endYear = 2024;
 
         const events = {
-            1989: "Government policy to fight the widening hole in the ozone layer",
-            1995: "Event for 1995: A major development in technology.",
-            2001: "Event for 2001: A milestone year for global politics.",
-            2015: "Event for 2015: The rise of social media.",
+            1989: "Government policy to fight the widening hole in the ozone layer.",
+            1995: "A major technological development.",
+            2001: "A milestone year for global politics.",
+            2015: "The rise of social media."
         };
 
         for (let year = startYear; year <= endYear; year++) {
@@ -159,24 +158,23 @@
         }
     </script>
 	
-	<script type="text/javascript">
-		window.onload = function() {
-  			vegaEmbed('#map', "js/map.vg.json").then(function(result) {}).catch(console.error);
-			vegaEmbed('#fuel', "js/fuel.vg.json").then(function(result) {}).catch(console.error);
+    <script type="text/javascript">
+        window.onload = function() {
+            vegaEmbed('#map', "js/map.vg.json").then(function(result) {}).catch(console.error);
+            vegaEmbed('#fuel', "js/fuel.vg.json").then(function(result) {}).catch(console.error);
 
-			vegaEmbed('#pie1', "js/pies/d19.vg.json").then(function(result) {}).catch(console.error);
-			vegaEmbed('#pie2', "js/pies/d21p1.vg.json").then(function(result) {}).catch(console.error);
-			vegaEmbed('#pie3', "js/pies/d21p2.vg.json").then(function(result) {}).catch(console.error);
-			vegaEmbed('#pie4', "js/pies/d21p3.vg.json").then(function(result) {}).catch(console.error);
-			vegaEmbed('#pie5', "js/pies/d21p4.vg.json").then(function(result) {}).catch(console.error);
-			vegaEmbed('#pie6', "js/pies/d21p5.vg.json").then(function(result) {}).catch(console.error);
-			
-			vegaEmbed('#emmisions1', "js/emmisions1.vg.json").then(function(result) {}).catch(console.error);
-			vegaEmbed('#emmisions2', "js/emmisions2.vg.json").then(function(result) {}).catch(console.error);
-			vegaEmbed('#upcomming', "js/upcomming.vg.json").then(function(result) {}).catch(console.error);
-			vegaEmbed('#tempchange', "js/tempchange.vg.json").then(function(result) {}).catch(console.error);
-			//vegaEmbed('#fossilfuelexport', "js/fossilfuelexport.vg.json").then(function(result) {}).catch(console.error);
-		}
-		</script>
+            vegaEmbed('#pie1', "js/pies/d19.vg.json").then(function(result) {}).catch(console.error);
+            vegaEmbed('#pie2', "js/pies/d21p1.vg.json").then(function(result) {}).catch(console.error);
+            vegaEmbed('#pie3', "js/pies/d21p2.vg.json").then(function(result) {}).catch(console.error);
+            vegaEmbed('#pie4', "js/pies/d21p3.vg.json").then(function(result) {}).catch(console.error);
+            vegaEmbed('#pie5', "js/pies/d21p4.vg.json").then(function(result) {}).catch(console.error);
+            vegaEmbed('#pie6', "js/pies/d21p5.vg.json").then(function(result) {}).catch(console.error);
+
+            vegaEmbed('#emissions1', "js/emissions1.vg.json").then(function(result) {}).catch(console.error);
+            vegaEmbed('#emissions2', "js/emissions2.vg.json").then(function(result) {}).catch(console.error);
+            vegaEmbed('#upcoming', "js/upcoming.vg.json").then(function(result) {}).catch(console.error);
+            vegaEmbed('#tempchange', "js/tempchange.vg.json").then(function(result) {}).catch(console.error);
+        }
+    </script>
 </body>
 </html>
