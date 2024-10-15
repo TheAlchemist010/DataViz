@@ -177,7 +177,7 @@ body {
     top: 95%;
 }
 
-#tempchange, #emmisions1, #emmisions2, #upcomming, #fossilfuelexport, #fuel, #map {
+#tempchange, #emmisions1, #emmisions2, #upcomming, #fossilfuelexport, #fuel, #map, #pie1, #pie2, #pie3, #pie4, #pie5, #pie6 {
     width: 100%;
     height: 300px; 
     box-sizing: border-box; 
