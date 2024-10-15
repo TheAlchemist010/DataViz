@@ -1,0 +1,65 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/TheAlchemist010/DataViz/refs/heads/main/A2/data/Election_Data.csv"
+  },
+   "title": {
+    "text": [
+      "We should spend more government money on",
+      "developing solar and wind power"
+    ]
+  },
+  "width": "container",
+  "background": "#eaf2f8",
+  "height": 300,
+  "transform": [
+    {
+      "filter": {
+        "field": "d21p5",
+        "oneOf": [1, 2, 3,4,5]
+      }
+    },
+    {
+      "lookup": "d21p5",
+      "from": {
+        "key": "value",
+        "fields": ["label"],
+        "data": { "values": [
+          {"value": 1, "label": "Yes"},
+          {"value": 2, "label": "Yes"},
+          {"value": 3, "label": "Depends"},
+          {"value": 4, "label": "No"},
+          {"value": 5, "label": "No"}
+        ]}
+      }
+    },
+    {
+      "aggregate": [{"op": "count", "as": "count"}],
+      "groupby": ["label"]
+    }
+  ],
+  "layer": [
+    {
+      "mark": {"type": "arc"},
+      "encoding": {
+        "theta": {
+          "field": "count",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "label",  
+          "type": "nominal",
+          "legend": {"title": "Response", "orient": "bottom"},
+          "scale": {
+            "domain": ["Yes", "Depends", "No"],
+            "range": ["Green", "Grey", "Red"]
+          }
+        },
+        "tooltip": [
+          {"field": "label", "title": "Response"},  
+          {"field": "count", "title": "Count"}
+        ]
+      }
+    }
+  ]
+}
