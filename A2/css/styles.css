@@ -144,38 +144,47 @@ body {
     font-size: 1.5rem;
 }
 
-/* Line between timeline and main content blocks */
 .block::before {
     content: '';
     position: absolute;
     left: -20px;
     width: 2px;
-    height: 50px;
+    height: 50px; /* Adjust height as needed */
     background-color: #3498db;
-    top: 50%;
+    top: 50%; /* Center vertically */
     transform: translateY(-50%);
+    transition: height 0.3s; /* Smooth transition */
 }
 
 /* Align blocks with specific timeline years */
-#block-1970::before {
+[data-year="1970"]::before {
     top: 15%;
 }
 
-#block-2000::before {
+[data-year="2000"]::before {
     top: 45%;
 }
 
-#block-2001::before {
+[data-year="2007"]::before {
     top: 55%;
 }
 
-#block-2015::before {
+[data-year="2013"]::before {
     top: 75%;
 }
 
-#block-2024::before {
+[data-year="2015"]::before {
+    top: 85%;
+}
+
+[data-year="2020"]::before {
+    top: 90%;
+}
+
+[data-year="2024"]::before {
     top: 95%;
 }
+
 
 /* Visualization container styling */
 #tempchange, #emissions1, #emissions2, #upcoming, #fossilfuelexport, #fuel, #map {
