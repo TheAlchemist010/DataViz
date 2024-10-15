@@ -10,7 +10,7 @@
   },
   "width": "container",
   "background": "#eaf2f8",
-  "height": 300,
+  "height": 150,
   "transform": [
     {
       "filter": {
