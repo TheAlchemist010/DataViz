@@ -74,7 +74,7 @@ body {
 .timeline-item .connector {
     position: absolute;
     left: 50px;
-    width: 22px;
+    width: 20px;
     height: 4px;
     background-color: #3498db;
     z-index: 1;
@@ -83,10 +83,10 @@ body {
 /* Content box styling */
 .timeline-item .content {
     background-color: #f9f9f9;
-    padding: 8px 10px;
+    padding: 5px 5px;
     border: 1px solid #ddd;
     border-radius: 4px;
-    margin-left: 10px;
+    margin-left: 8px;
     margin-right: 0;
     flex-grow: 1;
 }
