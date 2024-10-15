@@ -49,7 +49,7 @@
         "color": {
           "field": "label",  
           "type": "nominal",
-          "legend": {"title": "Response", "orient": "bottom"},
+          "legend": null,
           "scale": {
             "domain": ["Yes", "Depends", "No"],
             "range": ["Green", "Grey", "Red"]
