@@ -55,8 +55,8 @@
 						<div class="pure-u-1-3">
 							<p>As the first act of the Rudd government, Australia signed the Kyoto Protocl. <br> <i>"Australia's official declaration today that we will become a member of the Kyoto Protocol is a significant step forward in our country's efforts to fight climate change domestically – and with the international community."</i><br>Australia also implemented a number of policies intending to decrease Australia's emissions, such as a <b>carbon tax</b> and an <b>emissions trading scheme</b>.</p>
 						</div>
-			    			<div class="pure-u-2-3">
-							
+			    			<div class="pure-u-2-9">
+							<div class="pie1"></div>
 						</div>
 					</div>
                 </div>
@@ -157,6 +157,8 @@
 		window.onload = function() {
   			vegaEmbed('#map', "js/map.vg.json").then(function(result) {}).catch(console.error);
 			vegaEmbed('#fuel', "js/fuel.vg.json").then(function(result) {}).catch(console.error);
+
+			vegaEmbed('#pie1', "js/pies/d19.vg.json").then(function(result) {}).catch(console.error);
 			
 			vegaEmbed('#emmisions1', "js/emmisions1.vg.json").then(function(result) {}).catch(console.error);
 			vegaEmbed('#emmisions2', "js/emmisions2.vg.json").then(function(result) {}).catch(console.error);
