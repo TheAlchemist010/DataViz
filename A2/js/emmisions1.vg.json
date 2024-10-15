@@ -23,7 +23,8 @@
         "x": {
           "field": "year",
           "type": "quantitative",
-          "axis": {"title": "Year", "tickCount": 10, "format": ".0f"}
+          "axis": {"title": "Year", "tickCount": 10, "format": ".0f"},
+          "scale": {"domainMax": 2024} 
         },
         "y": {
           "field": "co2",
