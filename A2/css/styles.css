@@ -28,7 +28,7 @@ body {
 /* Single continuous vertical line */
 .timeline .timeline-line {
     position: absolute;
-    left: 48px;
+    left: 49px;
     top: 0;
     bottom: 0;
     width: 4px;
@@ -73,7 +73,7 @@ body {
 /* Horizontal line connector between year and content */
 .timeline-item .connector {
     position: absolute;
-    left: 50px;
+    left: 55px;
     width: 20px;
     height: 4px;
     background-color: #3498db;
